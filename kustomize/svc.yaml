@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webcard-svc
+  namespace: my-releases
+spec:
+  selector:
+    app.kubernetes.io/name: webcard 
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

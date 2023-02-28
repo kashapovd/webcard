@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  labels:
+    app.kubernetes.io/component: my-releases
+    app.kubernetes.io/instance: webcard
+    app.kubernetes.io/name: webcard
+  name: webcard
+  namespace: my-releases
+spec:
+  rules:
+  - host: www.kashapovd.xyz
+    http:
+      paths:
+      - backend:
+          service:
+            name: webcard-svc
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+    - hosts:
+      - 'kashapovd.xyz'
+      - '*.kashapovd.xyz'
