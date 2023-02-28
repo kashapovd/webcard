@@ -9,8 +9,8 @@ metadata:
     app.kubernetes.io/component: my-releases
     app.kubernetes.io/instance: webcard
     app.kubernetes.io/name: webcard
-  name: webcard
-  namespace: my-releases
+  name: webcard-ingress
+  namespace: webcard
 spec:
   rules:
   - host: www.kashapovd.xyz
