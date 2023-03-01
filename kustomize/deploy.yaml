@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: webcard
 spec:
+  replicas: 3
   minReadySeconds: 3
   revisionHistoryLimit: 
   progressDeadlineSeconds: 60
