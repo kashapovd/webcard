@@ -4,4 +4,4 @@ resources:
   - ns.yaml
   - ing.yaml
   - svc.yaml
-  - pod.yaml
+  - deploy.yaml
