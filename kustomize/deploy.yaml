@@ -21,8 +21,6 @@ spec:
       containers:
       - name: webcard-pod
         image: kashapovd/webcard:latest
-        imagePullSecrets:
-        - name: dockerhub
         resources:
           limits:
             cpu: 2000m
@@ -30,3 +28,6 @@ spec:
           requests:
             cpu: 100m
             memory: 64Mi
+      imagePullSecrets:
+      - name: dockerhub
+        
