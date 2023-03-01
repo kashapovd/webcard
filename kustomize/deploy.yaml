@@ -12,11 +12,11 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: webcard
+      app.kubernetes.io/name: webcard
   template:
     metadata:
       labels:
-        app: webcard
+        app.kubernetes.io/name: webcard
     spec:
       containers:
       - name: webcard-pod
